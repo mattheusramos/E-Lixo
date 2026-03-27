@@ -21,7 +21,6 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import com.trabalho.elixo.data.locations
-import com.trabalho.elixo.ui.theme.Background
 import com.trabalho.elixo.ui.theme.GreenPrimary
 import com.trabalho.elixo.ui.theme.components.*
 import androidx.compose.foundation.lazy.items
@@ -99,7 +98,7 @@ fun HomeScreen(onNavigateToSettings: () -> Unit)
         bottomBar = {
             BottomNavigationBar(onSettingsClick = onNavigateToSettings)
         },
-        containerColor = Background
+        containerColor = MaterialTheme.colorScheme.background
     ) { padding ->
 
         Column(

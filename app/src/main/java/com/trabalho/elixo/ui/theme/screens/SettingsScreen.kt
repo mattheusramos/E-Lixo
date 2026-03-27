@@ -16,10 +16,11 @@ import com.trabalho.elixo.ui.theme.*
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun SettingsScreen(onBack: () -> Unit) {
+fun SettingsScreen(onBack: () -> Unit,
+                   isDarkMode: Boolean,
+                   onThemeChange: (Boolean) -> Unit) {
 
     var locationEnabled by remember { mutableStateOf(true) }
-    var isDarkMode by remember { mutableStateOf(false) }
 
     Scaffold(
         topBar = {
@@ -34,7 +35,7 @@ fun SettingsScreen(onBack: () -> Unit) {
                 }
             )
         },
-        containerColor = Background
+        containerColor = MaterialTheme.colorScheme.background
     ) { padding ->
 
         Column(
@@ -45,7 +46,7 @@ fun SettingsScreen(onBack: () -> Unit) {
 
             Text(
                 "Ajuste preferências básicas do aplicativo.",
-                color = GrayText
+                color = MaterialTheme.colorScheme.onSurfaceVariant
             )
 
             Spacer(modifier = Modifier.height(16.dp))
@@ -71,7 +72,7 @@ fun SettingsScreen(onBack: () -> Unit) {
 
                     Column(modifier = Modifier.weight(1f)) {
                         Text("Localização", fontWeight = FontWeight.Bold)
-                        Text("Permissão ativada", color = GrayText)
+                        Text("Permissão ativada", color = MaterialTheme.colorScheme.onSurfaceVariant)
                     }
 
                     Switch(
@@ -108,7 +109,7 @@ fun SettingsScreen(onBack: () -> Unit) {
 
                     Row {
                         OutlinedButton(
-                            onClick = { isDarkMode = false },
+                            onClick = { onThemeChange(false) },
                             shape = RoundedCornerShape(50)
                         ) {
                             Text("Claro")
@@ -117,7 +118,7 @@ fun SettingsScreen(onBack: () -> Unit) {
                         Spacer(modifier = Modifier.width(8.dp))
 
                         OutlinedButton(
-                            onClick = { isDarkMode = true },
+                            onClick = { onThemeChange(true) },
                             shape = RoundedCornerShape(50)
                         ) {
                             Text("Escuro")
@@ -153,7 +154,7 @@ fun SettingsScreen(onBack: () -> Unit) {
 
                     Text(
                         "Versão 1.0 • Política de privacidade disponível online.",
-                        color = GrayText
+                        color = MaterialTheme.colorScheme.onSurfaceVariant
                     )
 
                     Spacer(modifier = Modifier.height(12.dp))

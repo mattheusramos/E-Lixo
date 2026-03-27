@@ -12,7 +12,6 @@ import com.trabalho.elixo.data.LocationModel
 import com.trabalho.elixo.ui.theme.GreenLight
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
-import com.trabalho.elixo.ui.theme.GrayText
 import com.trabalho.elixo.ui.theme.GreenPrimary
 import com.trabalho.elixo.R
 
@@ -53,7 +52,7 @@ fun LocationCard(location: LocationModel) {
 
                 Text(
                     location.endereco,
-                    color = GrayText,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant,
                     style = MaterialTheme.typography.bodySmall
                 )
             }
