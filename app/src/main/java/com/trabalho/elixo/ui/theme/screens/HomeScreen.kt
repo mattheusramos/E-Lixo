@@ -4,40 +4,36 @@ import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
 import com.trabalho.elixo.utils.LocationUtils
 import com.trabalho.elixo.utils.DistanceUtils
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.material3.Button
-import androidx.compose.material3.ButtonDefaults
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
+import androidx.compose.foundation.lazy.items
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Refresh
+import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.res.painterResource
+import com.trabalho.elixo.R
 import com.trabalho.elixo.data.locations
 import com.trabalho.elixo.ui.theme.GreenPrimary
 import com.trabalho.elixo.ui.theme.components.*
-import androidx.compose.foundation.lazy.items
-import androidx.compose.material.icons.Icons
-import androidx.compose.runtime.getValue
-import androidx.compose.material.icons.filled.Refresh
-import androidx.compose.material3.*
-import androidx.compose.foundation.Image
-import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.Alignment
-import com.trabalho.elixo.R
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun HomeScreen(onNavigateToSettings: () -> Unit)
-{
-
+fun HomeScreen(
+    onNavigateToSettings: () -> Unit,
+    onNavigateToReciclagem: () -> Unit
+) {
     val permissionLauncher = rememberLauncherForActivityResult(
         contract = ActivityResultContracts.RequestPermission(),
         onResult = {}
@@ -54,8 +50,7 @@ fun HomeScreen(onNavigateToSettings: () -> Unit)
     var userLon by remember { mutableStateOf<Double?>(null) }
 
     val updatedLocations = remember(userLat, userLon) {
-        if (userLat != null && userLon != null)
-        {
+        if (userLat != null && userLon != null) {
             locations.map {
                 it.copy(
                     distancia = DistanceUtils.calcularDistancia(
@@ -66,8 +61,7 @@ fun HomeScreen(onNavigateToSettings: () -> Unit)
                     )
                 )
             }
-        }
-        else locations
+        } else locations
     }
 
     Scaffold(
@@ -75,7 +69,6 @@ fun HomeScreen(onNavigateToSettings: () -> Unit)
             TopAppBar(
                 title = {
                     Row(verticalAlignment = Alignment.CenterVertically) {
-
                         Image(
                             painter = painterResource(id = R.drawable.app_icon),
                             contentDescription = "Logo",
@@ -87,7 +80,6 @@ fun HomeScreen(onNavigateToSettings: () -> Unit)
                         Text("E-lixo")
                     }
                 },
-
                 actions = {
                     IconButton(onClick = { /* atualizar */ }) {
                         Icon(Icons.Default.Refresh, contentDescription = "Atualizar")
@@ -101,39 +93,52 @@ fun HomeScreen(onNavigateToSettings: () -> Unit)
         containerColor = MaterialTheme.colorScheme.background
     ) { padding ->
 
-        Column(
+        LazyColumn(
             modifier = Modifier
                 .padding(padding)
-                .padding(16.dp)
+                .padding(horizontal = 16.dp),
+            verticalArrangement = Arrangement.spacedBy(12.dp),
+            contentPadding = PaddingValues(vertical = 16.dp)
         ) {
 
-            Text(
-                "Pontos de Coleta Próximos",
-                style = MaterialTheme.typography.titleLarge,
-                fontWeight = FontWeight.Bold
-            )
+            item {
+                Text(
+                    "Pontos de Coleta Próximos",
+                    style = MaterialTheme.typography.titleLarge,
+                    fontWeight = FontWeight.Bold
+                )
+            }
 
-            SearchBar()
+            item {
+                SearchBar()
+            }
 
-            LazyColumn {
-                items(updatedLocations) { location ->
-                    LocationCard(location)
+            items(updatedLocations) { location ->
+                LocationCard(location)
+            }
+
+            item {
+                Button(
+                    onClick = {
+                        locationUtils.getCurrentLocation { lat, lon ->
+                            userLat = lat
+                            userLon = lon
+                        }
+                    },
+                    modifier = Modifier.fillMaxWidth(),
+                    colors = ButtonDefaults.buttonColors(containerColor = GreenPrimary)
+                ) {
+                    Text("Atualizar localização")
                 }
             }
 
-            Spacer(modifier = Modifier.height(8.dp))
-
-            Button(
-                onClick = {
-                    locationUtils.getCurrentLocation { lat, lon ->
-                        userLat = lat
-                        userLon = lon
-                    }
-                },
-                modifier = Modifier.fillMaxWidth(),
-                colors = ButtonDefaults.buttonColors(containerColor = GreenPrimary)
-            ) {
-                Text("Atualizar localização")
+            item {
+                OutlinedButton(
+                    onClick = onNavigateToReciclagem,
+                    modifier = Modifier.fillMaxWidth()
+                ) {
+                    Text("Aprenda a Reciclar")
+                }
             }
         }
     }
