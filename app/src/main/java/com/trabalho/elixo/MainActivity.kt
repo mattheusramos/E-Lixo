@@ -9,13 +9,13 @@ import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.*
 import com.trabalho.elixo.ui.theme.screens.HomeScreen
 import com.trabalho.elixo.ui.theme.screens.SettingsScreen
+import com.trabalho.elixo.ui.theme.screens.ReciclagemScreen
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         setContent {
-
             var currentScreen by remember { mutableStateOf("home") }
             var isDarkMode by remember { mutableStateOf(false) }
 
@@ -29,10 +29,12 @@ class MainActivity : ComponentActivity() {
                 colorScheme = colorScheme
             ) {
                 when (currentScreen) {
-
                     "home" -> HomeScreen(
                         onNavigateToSettings = {
                             currentScreen = "settings"
+                        },
+                        onNavigateToReciclagem = {
+                            currentScreen = "reciclagem"
                         }
                     )
 
@@ -43,9 +45,14 @@ class MainActivity : ComponentActivity() {
                         isDarkMode = isDarkMode,
                         onThemeChange = { isDarkMode = it }
                     )
+
+                    "reciclagem" -> ReciclagemScreen(
+                        onBack = {
+                            currentScreen = "home"
+                        }
+                    )
                 }
             }
-
         }
     }
 }

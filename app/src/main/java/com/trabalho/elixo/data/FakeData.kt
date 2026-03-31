@@ -1,22 +1,28 @@
 package com.trabalho.elixo.data
 
 val locations = listOf(
+
     LocationModel(
-        "Centro de Triagem Vila Verde",
-        "Ponto de Reciclagem Comunitário",
-        "Próximo ao supermercado Pão & Prosa, entrada lateral.",
-        -19.9208, -43.9378
+        nome = "ASMARE - Reciclagem Completa",
+        descricao = "Cooperativa de Reciclagem",
+        endereco = "Rua Ituiutaba, 888 - Prado, Belo Horizonte",
+        latitude = -19.9240,
+        longitude = -43.9550
     ),
+
     LocationModel(
-        "Ponto Verde Mercado Central",
-        "Ponto de Coleta Comercial",
-        "Ao lado da saída principal do Mercado Central.",
-        -19.9191, -43.9386
+        nome = "BH Recicla - Centro",
+        descricao = "Eletrônicos e Recicláveis",
+        endereco = "Av. do Contorno, 8425 - Lourdes, Belo Horizonte",
+        latitude = -19.9245,
+        longitude = -43.9400
     ),
+
     LocationModel(
-        "EcoPonto Praça Nova",
-        "Ponto de Entrega Voluntária",
-        "Na praça nova, próximo ao playground.",
-        -19.9220, -43.9400
+        nome = "Ecoponto Pampulha",
+        descricao = "Entulho, móveis e eletrônicos",
+        endereco = "Av. Antônio Carlos, 7594 - Pampulha, Belo Horizonte",
+        latitude = -19.8690,
+        longitude = -43.9700
     )
 )
