@@ -1,6 +1,7 @@
 R_DEF: Internal format may change without notice
 local
 color black
+color ic_launcher_background
 color purple_200
 color purple_500
 color purple_700
@@ -9,14 +10,14 @@ color teal_700
 color white
 drawable a1
 drawable a2
-drawable a3
+drawable a4
 drawable app_icon
 drawable celular
 drawable gabinete
 drawable gpu
 drawable ic_launcher_background
 drawable ic_launcher_foreground
-drawable monito
+drawable monitor
 drawable notebook
 drawable pccompleto
 drawable placamae
@@ -27,7 +28,9 @@ drawable tabket
 drawable teclado
 drawable tecladoemouse
 drawable tv
+mipmap app_icon2
 mipmap ic_launcher
+mipmap ic_launcher_foreground
 mipmap ic_launcher_round
 string app_name
 style Theme.Elixo

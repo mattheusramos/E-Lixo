@@ -21,7 +21,7 @@ fun LocationCard(location: LocationModel, onClick: () -> Unit) {
 
     Card(
         shape = RoundedCornerShape(16.dp),
-        colors = CardDefaults.cardColors(containerColor = Color.White),
+        colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.primary.copy(alpha = 0.08f)),
         modifier = Modifier
             .fillMaxWidth()
             .padding(vertical = 10.dp)
@@ -32,7 +32,10 @@ fun LocationCard(location: LocationModel, onClick: () -> Unit) {
             Box(
                 modifier = Modifier
                     .size(50.dp)
-                    .background(GreenLight, RoundedCornerShape(12.dp)),
+                    .background(
+                        MaterialTheme.colorScheme.primary.copy(alpha = 0.1f),
+                        RoundedCornerShape(12.dp)
+                    ),
                 contentAlignment = Alignment.Center
             ) {
                 Icon(
@@ -49,7 +52,7 @@ fun LocationCard(location: LocationModel, onClick: () -> Unit) {
 
                 Text(
                     location.descricao,
-                    color = GreenPrimary,
+                    color = MaterialTheme.colorScheme.primary,
                     style = MaterialTheme.typography.bodySmall
                 )
 
@@ -62,7 +65,7 @@ fun LocationCard(location: LocationModel, onClick: () -> Unit) {
 
             Text(
                 location.distancia,
-                color = GreenPrimary,
+                color = MaterialTheme.colorScheme.onSurfaceVariant,
                 fontWeight = FontWeight.Bold
             )
         }

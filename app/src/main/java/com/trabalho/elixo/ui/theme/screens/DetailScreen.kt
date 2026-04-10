@@ -1,6 +1,5 @@
 package com.trabalho.elixo.ui.theme.screens
 
-import android.R.color.black
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
@@ -97,7 +96,6 @@ fun DetailScreen(
                         Icon(
                             painterResource(id = item.icon),
                             contentDescription = item.nomeObjeto,
-                            tint = black,
                             modifier = Modifier.size(28.dp)
                         )
 

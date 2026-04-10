@@ -48,6 +48,7 @@ color common_google_signin_btn_text_light_disabled
 color common_google_signin_btn_text_light_focused
 color common_google_signin_btn_text_light_pressed
 color common_google_signin_btn_tint
+color ic_launcher_background
 color notification_action_color_filter
 color notification_icon_bg_color
 color purple_200
@@ -82,7 +83,7 @@ dimen notification_top_pad
 dimen notification_top_pad_large_text
 drawable a1
 drawable a2
-drawable a3
+drawable a4
 drawable app_icon
 drawable celular
 drawable common_full_open_on_phone
@@ -116,7 +117,7 @@ drawable ic_call_decline
 drawable ic_call_decline_low
 drawable ic_launcher_background
 drawable ic_launcher_foreground
-drawable monito
+drawable monitor
 drawable notebook
 drawable notification_action_background
 drawable notification_bg
@@ -269,7 +270,9 @@ layout notification_template_custom_big
 layout notification_template_icon_group
 layout notification_template_part_chronometer
 layout notification_template_part_time
+mipmap app_icon2
 mipmap ic_launcher
+mipmap ic_launcher_foreground
 mipmap ic_launcher_round
 string androidx_startup
 string app_name
