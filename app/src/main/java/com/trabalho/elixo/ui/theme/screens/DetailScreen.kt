@@ -46,7 +46,7 @@ fun DetailScreen(
             contentPadding = PaddingValues(vertical = 16.dp)
         ) {
 
-            // 📍 INFO DO LOCAL
+            // INFO DO LOCAL
             item {
                 Card(
                     shape = RoundedCornerShape(16.dp),
@@ -71,7 +71,7 @@ fun DetailScreen(
                 }
             }
 
-            // ♻️ TÍTULO
+            // TÍTULO
             item {
                 Text(
                     "Itens disponíveis",
@@ -80,7 +80,7 @@ fun DetailScreen(
                 )
             }
 
-            // 📦 LISTA DE ITENS
+            // LISTA DE ITENS
             items(location.itens) { item ->
 
                 Card(

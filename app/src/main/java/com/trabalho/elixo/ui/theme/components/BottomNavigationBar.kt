@@ -7,10 +7,10 @@ import androidx.compose.material.icons.filled.*
 
 @Composable
 fun BottomNavigationBar(
-    onSettingsClick: () -> Unit
+    onSettingsClick: () -> Unit,
+    onMonetizacaoClick: () -> Unit
 ) {
     NavigationBar {
-
         NavigationBarItem(
             selected = true,
             onClick = {},
@@ -19,7 +19,7 @@ fun BottomNavigationBar(
 
         NavigationBarItem(
             selected = false,
-            onClick = {},
+            onClick = onMonetizacaoClick,
             icon = { Icon(imageVector = Icons.Default.MonetizationOn, contentDescription = null) }
         )
 

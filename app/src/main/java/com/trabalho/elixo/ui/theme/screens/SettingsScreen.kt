@@ -51,7 +51,7 @@ fun SettingsScreen(onBack: () -> Unit,
 
             Spacer(modifier = Modifier.height(16.dp))
 
-            // 🔹 LOCALIZAÇÃO
+            // LOCALIZAÇÃO
             Card(
                 shape = RoundedCornerShape(16.dp),
                 modifier = Modifier.fillMaxWidth()
@@ -84,7 +84,7 @@ fun SettingsScreen(onBack: () -> Unit,
 
             Spacer(modifier = Modifier.height(12.dp))
 
-            // 🔹 APARÊNCIA
+            // APARÊNCIA
             Card(
                 shape = RoundedCornerShape(16.dp),
                 modifier = Modifier.fillMaxWidth()
@@ -129,7 +129,7 @@ fun SettingsScreen(onBack: () -> Unit,
 
             Spacer(modifier = Modifier.height(12.dp))
 
-            // 🔹 SOBRE
+            // SOBRE
             Card(
                 shape = RoundedCornerShape(16.dp),
                 modifier = Modifier.fillMaxWidth()

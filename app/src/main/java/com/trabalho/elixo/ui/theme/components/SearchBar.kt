@@ -11,12 +11,13 @@ import androidx.compose.material.icons.filled.Search
 import androidx.compose.ui.unit.dp
 
 @Composable
-fun SearchBar() {
-    var text by remember { mutableStateOf("") }
-
+fun SearchBar(
+    text: String,
+    onTextChange: (String) -> Unit
+) {
     OutlinedTextField(
         value = text,
-        onValueChange = { text = it },
+        onValueChange = onTextChange,
         placeholder = { Text("Buscar rua, bairro ou local") },
         leadingIcon = { Icon(Icons.Default.Search, contentDescription = null) },
         modifier = Modifier

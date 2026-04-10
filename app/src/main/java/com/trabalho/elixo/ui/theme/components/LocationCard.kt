@@ -7,13 +7,10 @@ import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.*
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.graphics.Color
 import com.trabalho.elixo.data.LocationModel
-import com.trabalho.elixo.ui.theme.GreenLight
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import com.trabalho.elixo.ui.theme.GreenPrimary
-import com.trabalho.elixo.R
 import androidx.compose.foundation.clickable
 
 @Composable

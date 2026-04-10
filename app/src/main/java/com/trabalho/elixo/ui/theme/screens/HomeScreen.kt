@@ -9,7 +9,7 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Refresh
+import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
@@ -22,7 +22,6 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.Alignment
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import com.trabalho.elixo.R
 import com.trabalho.elixo.data.locations
@@ -35,7 +34,9 @@ import com.trabalho.elixo.data.LocationModel
 fun HomeScreen(
     onNavigateToSettings: () -> Unit,
     onNavigateToReciclagem: () -> Unit,
-    onLocationClick: (LocationModel) -> Unit
+    onLocationClick: (LocationModel) -> Unit,
+    onNavigateToMonetizacao: () -> Unit,
+    onLogout: () -> Unit
 ) {
     val permissionLauncher = rememberLauncherForActivityResult(
         contract = ActivityResultContracts.RequestPermission(),
@@ -51,6 +52,7 @@ fun HomeScreen(
 
     var userLat by remember { mutableStateOf<Double?>(null) }
     var userLon by remember { mutableStateOf<Double?>(null) }
+    var searchText by remember { mutableStateOf("") }
 
     val updatedLocations = remember(userLat, userLon) {
         if (userLat != null && userLon != null) {
@@ -67,6 +69,11 @@ fun HomeScreen(
         } else locations
     }
 
+    val filteredLocations = updatedLocations.filter {
+        it.nome.contains(searchText, ignoreCase = true) ||
+                it.endereco.contains(searchText, ignoreCase = true)
+    }
+
     Scaffold(
         topBar = {
             TopAppBar(
@@ -80,18 +87,19 @@ fun HomeScreen(
 
                         Spacer(modifier = Modifier.width(8.dp))
 
-                        Text("E-lixo")
+                        Text("TechCycle")
                     }
                 },
                 actions = {
-                    IconButton(onClick = { /* atualizar */ }) {
-                        Icon(Icons.Default.Refresh, contentDescription = "Atualizar")
+                    IconButton(onClick = onLogout) {
+                        Icon(Icons.Default.ArrowBack, contentDescription = "Logout")
                     }
                 }
             )
         },
         bottomBar = {
-            BottomNavigationBar(onSettingsClick = onNavigateToSettings)
+            BottomNavigationBar(onSettingsClick = onNavigateToSettings,
+                                onMonetizacaoClick = onNavigateToMonetizacao)
         },
         containerColor = MaterialTheme.colorScheme.background
     ) { padding ->
@@ -113,10 +121,13 @@ fun HomeScreen(
             }
 
             item {
-                SearchBar()
+                SearchBar(
+                    text = searchText,
+                    onTextChange = { searchText = it }
+                )
             }
 
-            items(updatedLocations) { location ->
+            items(filteredLocations) { location ->
                 LocationCard(
                     location = location,
                     onClick = { onLocationClick(location) }

@@ -37,6 +37,13 @@ fun ReciclagemScreen(onBack: () -> Unit) {
 
     val materiais = listOf(
         MaterialReciclagem(
+            titulo = "Eletrônicos",
+            icone = "💻",
+            cor = Color(0xFF455A64),
+            status = "⚠️ Material complicado",
+            descricao = "Celulares, computadores, fios, teclados e aparelhos eletrônicos devem ir para coleta especializada de lixo eletrônico."
+        ),
+        MaterialReciclagem(
             titulo = "Papel",
             icone = "📄",
             cor = Color(0xFF2F578B),
@@ -98,13 +105,6 @@ fun ReciclagemScreen(onBack: () -> Unit) {
             cor = Color(0xFF795548),
             status = "⚠️ Material complicado",
             descricao = "Móveis velhos podem ser reaproveitados, doados, desmontados ou levados a ecopontos específicos."
-        ),
-        MaterialReciclagem(
-            titulo = "Eletrônicos",
-            icone = "💻",
-            cor = Color(0xFF455A64),
-            status = "⚠️ Material complicado",
-            descricao = "Celulares, computadores, fios, teclados e aparelhos eletrônicos devem ir para coleta especializada de lixo eletrônico."
         )
     )
 

@@ -10,6 +10,8 @@ import androidx.compose.runtime.*
 import com.trabalho.elixo.ui.theme.screens.HomeScreen
 import com.trabalho.elixo.ui.theme.screens.SettingsScreen
 import com.trabalho.elixo.ui.theme.screens.ReciclagemScreen
+import com.trabalho.elixo.ui.theme.screens.MonetizacaoScreen
+import com.trabalho.elixo.ui.theme.screens.LoginScreen
 import com.trabalho.elixo.data.LocationModel
 import com.trabalho.elixo.ui.theme.screens.DetailScreen
 
@@ -18,9 +20,9 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
 
         setContent {
-            var currentScreen by remember { mutableStateOf("home") }
             var isDarkMode by remember { mutableStateOf(false) }
             var selectedLocation by remember { mutableStateOf<LocationModel?>(null) }
+            var currentScreen by remember { mutableStateOf("login") }
 
             val colorScheme = if (isDarkMode) {
                 darkColorScheme()
@@ -36,12 +38,22 @@ class MainActivity : ComponentActivity() {
                         onNavigateToSettings = {
                             currentScreen = "settings"
                         },
+
                         onNavigateToReciclagem = {
                             currentScreen = "reciclagem"
                         },
+
                         onLocationClick = { location ->
                             selectedLocation = location
                             currentScreen = "detalhes"
+                        },
+
+                        onNavigateToMonetizacao = {
+                            currentScreen = "monetizacao"
+                        },
+
+                        onLogout = {
+                            currentScreen = "login"
                         }
                     )
 
@@ -55,6 +67,18 @@ class MainActivity : ComponentActivity() {
 
                     "reciclagem" -> ReciclagemScreen(
                         onBack = {
+                            currentScreen = "home"
+                        }
+                    )
+
+                    "monetizacao" -> MonetizacaoScreen(
+                        onBack = {
+                            currentScreen = "home"
+                        }
+                    )
+
+                    "login" -> LoginScreen(
+                        onLogin = {
                             currentScreen = "home"
                         }
                     )

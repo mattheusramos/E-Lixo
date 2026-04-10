@@ -1,4 +1,4 @@
-# ♻️ E-Lixo
+# ♻️ TechCycle
 
 Aplicativo mobile Android desenvolvido para ajudar usuários a encontrar pontos de coleta de lixo próximos, promovendo descarte correto e sustentabilidade.
 
