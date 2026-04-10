@@ -22,7 +22,7 @@ fun LoginScreen(
     onLogin: () -> Unit
 ) {
 
-    var cpf by remember { mutableStateOf("") }
+    var usuario by remember { mutableStateOf("") }
     var senha by remember { mutableStateOf("") }
     var senhaVisivel by remember { mutableStateOf(false) }
 
@@ -56,11 +56,11 @@ fun LoginScreen(
 
             Spacer(modifier = Modifier.height(32.dp))
 
-            // CPF
+            // usuario
             OutlinedTextField(
-                value = cpf,
-                onValueChange = { cpf = it },
-                label = { Text("CPF") },
+                value = usuario,
+                onValueChange = { usuario = it },
+                label = { Text("Usuário") },
                 singleLine = true,
                 modifier = Modifier.fillMaxWidth(),
                 shape = RoundedCornerShape(12.dp)
