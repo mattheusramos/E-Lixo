@@ -1,74 +1,146 @@
 [
     {
-        "merged": "com.trabalho.elixo.app-debug-39:/mipmap-xhdpi_ic_launcher_round.webp.flat",
-        "source": "com.trabalho.elixo.app-main-41:/mipmap-xhdpi/ic_launcher_round.webp"
+        "merged": "C:\\Users\\mathe\\.gradle\\daemon\\8.13\\com.trabalho.elixo.app-debug-40:\\mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\mathe\\.gradle\\daemon\\8.13\\com.trabalho.elixo.app-main-42:\\mipmap-mdpi\\ic_launcher_round.webp"
     },
     {
-        "merged": "com.trabalho.elixo.app-debug-39:/mipmap-mdpi_ic_launcher.webp.flat",
-        "source": "com.trabalho.elixo.app-main-41:/mipmap-mdpi/ic_launcher.webp"
+        "merged": "com.trabalho.elixo.app-debug-40:/drawable_notebook.png.flat",
+        "source": "com.trabalho.elixo.app-main-42:/drawable/notebook.png"
     },
     {
-        "merged": "com.trabalho.elixo.app-debug-39:/mipmap-hdpi_ic_launcher_round.webp.flat",
-        "source": "com.trabalho.elixo.app-main-41:/mipmap-hdpi/ic_launcher_round.webp"
+        "merged": "C:\\Users\\mathe\\.gradle\\daemon\\8.13\\com.trabalho.elixo.app-debug-40:\\mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\mathe\\.gradle\\daemon\\8.13\\com.trabalho.elixo.app-main-42:\\mipmap-xhdpi\\ic_launcher_round.webp"
     },
     {
-        "merged": "com.trabalho.elixo.app-debug-39:/mipmap-xxxhdpi_ic_launcher.webp.flat",
-        "source": "com.trabalho.elixo.app-main-41:/mipmap-xxxhdpi/ic_launcher.webp"
+        "merged": "C:\\Users\\mathe\\.gradle\\daemon\\8.13\\com.trabalho.elixo.app-debug-40:\\mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\mathe\\.gradle\\daemon\\8.13\\com.trabalho.elixo.app-main-42:\\mipmap-hdpi\\ic_launcher.webp"
     },
     {
-        "merged": "com.trabalho.elixo.app-debug-39:/mipmap-xxhdpi_ic_launcher_round.webp.flat",
-        "source": "com.trabalho.elixo.app-main-41:/mipmap-xxhdpi/ic_launcher_round.webp"
+        "merged": "C:\\Users\\mathe\\.gradle\\daemon\\8.13\\com.trabalho.elixo.app-debug-40:\\drawable_a2.png.flat",
+        "source": "C:\\Users\\mathe\\.gradle\\daemon\\8.13\\com.trabalho.elixo.app-main-42:\\drawable\\a2.png"
     },
     {
-        "merged": "com.trabalho.elixo.app-debug-39:/drawable_app_icon.png.flat",
-        "source": "com.trabalho.elixo.app-main-41:/drawable/app_icon.png"
+        "merged": "com.trabalho.elixo.app-debug-40:/drawable_pccompleto.png.flat",
+        "source": "com.trabalho.elixo.app-main-42:/drawable/pccompleto.png"
     },
     {
-        "merged": "com.trabalho.elixo.app-debug-39:/xml_backup_rules.xml.flat",
-        "source": "com.trabalho.elixo.app-main-41:/xml/backup_rules.xml"
+        "merged": "com.trabalho.elixo.app-debug-40:/drawable_tecladoemouse.png.flat",
+        "source": "com.trabalho.elixo.app-main-42:/drawable/tecladoemouse.png"
     },
     {
-        "merged": "com.trabalho.elixo.app-debug-39:/mipmap-anydpi_ic_launcher_round.xml.flat",
-        "source": "com.trabalho.elixo.app-main-41:/mipmap-anydpi/ic_launcher_round.xml"
+        "merged": "C:\\Users\\mathe\\.gradle\\daemon\\8.13\\com.trabalho.elixo.app-debug-40:\\drawable_ic_launcher_background.xml.flat",
+        "source": "C:\\Users\\mathe\\.gradle\\daemon\\8.13\\com.trabalho.elixo.app-main-42:\\drawable\\ic_launcher_background.xml"
     },
     {
-        "merged": "com.trabalho.elixo.app-debug-39:/mipmap-anydpi_ic_launcher.xml.flat",
-        "source": "com.trabalho.elixo.app-main-41:/mipmap-anydpi/ic_launcher.xml"
+        "merged": "C:\\Users\\mathe\\.gradle\\daemon\\8.13\\com.trabalho.elixo.app-debug-40:\\xml_data_extraction_rules.xml.flat",
+        "source": "C:\\Users\\mathe\\.gradle\\daemon\\8.13\\com.trabalho.elixo.app-main-42:\\xml\\data_extraction_rules.xml"
     },
     {
-        "merged": "com.trabalho.elixo.app-debug-39:/mipmap-xhdpi_ic_launcher.webp.flat",
-        "source": "com.trabalho.elixo.app-main-41:/mipmap-xhdpi/ic_launcher.webp"
+        "merged": "C:\\Users\\mathe\\.gradle\\daemon\\8.13\\com.trabalho.elixo.app-debug-40:\\drawable_ic_launcher_foreground.xml.flat",
+        "source": "C:\\Users\\mathe\\.gradle\\daemon\\8.13\\com.trabalho.elixo.app-main-42:\\drawable\\ic_launcher_foreground.xml"
     },
     {
-        "merged": "com.trabalho.elixo.app-debug-39:/drawable_recycle.png.flat",
-        "source": "com.trabalho.elixo.app-main-41:/drawable/recycle.png"
+        "merged": "C:\\Users\\mathe\\.gradle\\daemon\\8.13\\com.trabalho.elixo.app-debug-40:\\mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\mathe\\.gradle\\daemon\\8.13\\com.trabalho.elixo.app-main-42:\\mipmap-mdpi\\ic_launcher.webp"
     },
     {
-        "merged": "com.trabalho.elixo.app-debug-39:/mipmap-hdpi_ic_launcher.webp.flat",
-        "source": "com.trabalho.elixo.app-main-41:/mipmap-hdpi/ic_launcher.webp"
+        "merged": "C:\\Users\\mathe\\.gradle\\daemon\\8.13\\com.trabalho.elixo.app-debug-40:\\drawable_monetization.xml.flat",
+        "source": "C:\\Users\\mathe\\.gradle\\daemon\\8.13\\com.trabalho.elixo.app-main-42:\\drawable\\monetization.xml"
     },
     {
-        "merged": "com.trabalho.elixo.app-debug-39:/mipmap-mdpi_ic_launcher_round.webp.flat",
-        "source": "com.trabalho.elixo.app-main-41:/mipmap-mdpi/ic_launcher_round.webp"
+        "merged": "com.trabalho.elixo.app-debug-40:/drawable_placamae.png.flat",
+        "source": "com.trabalho.elixo.app-main-42:/drawable/placamae.png"
     },
     {
-        "merged": "com.trabalho.elixo.app-debug-39:/mipmap-xxhdpi_ic_launcher.webp.flat",
-        "source": "com.trabalho.elixo.app-main-41:/mipmap-xxhdpi/ic_launcher.webp"
+        "merged": "com.trabalho.elixo.app-debug-40:/drawable_gpu.png.flat",
+        "source": "com.trabalho.elixo.app-main-42:/drawable/gpu.png"
     },
     {
-        "merged": "com.trabalho.elixo.app-debug-39:/mipmap-xxxhdpi_ic_launcher_round.webp.flat",
-        "source": "com.trabalho.elixo.app-main-41:/mipmap-xxxhdpi/ic_launcher_round.webp"
+        "merged": "C:\\Users\\mathe\\.gradle\\daemon\\8.13\\com.trabalho.elixo.app-debug-40:\\mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\mathe\\.gradle\\daemon\\8.13\\com.trabalho.elixo.app-main-42:\\mipmap-xhdpi\\ic_launcher.webp"
     },
     {
-        "merged": "com.trabalho.elixo.app-debug-39:/drawable_ic_launcher_background.xml.flat",
-        "source": "com.trabalho.elixo.app-main-41:/drawable/ic_launcher_background.xml"
+        "merged": "C:\\Users\\mathe\\.gradle\\daemon\\8.13\\com.trabalho.elixo.app-debug-40:\\mipmap-xxxhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\mathe\\.gradle\\daemon\\8.13\\com.trabalho.elixo.app-main-42:\\mipmap-xxxhdpi\\ic_launcher.webp"
     },
     {
-        "merged": "com.trabalho.elixo.app-debug-39:/drawable_ic_launcher_foreground.xml.flat",
-        "source": "com.trabalho.elixo.app-main-41:/drawable/ic_launcher_foreground.xml"
+        "merged": "com.trabalho.elixo.app-debug-40:/drawable_gabinete.png.flat",
+        "source": "com.trabalho.elixo.app-main-42:/drawable/gabinete.png"
     },
     {
-        "merged": "com.trabalho.elixo.app-debug-39:/xml_data_extraction_rules.xml.flat",
-        "source": "com.trabalho.elixo.app-main-41:/xml/data_extraction_rules.xml"
+        "merged": "C:\\Users\\mathe\\.gradle\\daemon\\8.13\\com.trabalho.elixo.app-debug-40:\\drawable_a1.png.flat",
+        "source": "C:\\Users\\mathe\\.gradle\\daemon\\8.13\\com.trabalho.elixo.app-main-42:\\drawable\\a1.png"
+    },
+    {
+        "merged": "com.trabalho.elixo.app-debug-40:/drawable_tabket.png.flat",
+        "source": "com.trabalho.elixo.app-main-42:/drawable/tabket.png"
+    },
+    {
+        "merged": "C:\\Users\\mathe\\.gradle\\daemon\\8.13\\com.trabalho.elixo.app-debug-40:\\drawable_app_icon.png.flat",
+        "source": "C:\\Users\\mathe\\.gradle\\daemon\\8.13\\com.trabalho.elixo.app-main-42:\\drawable\\app_icon.png"
+    },
+    {
+        "merged": "C:\\Users\\mathe\\.gradle\\daemon\\8.13\\com.trabalho.elixo.app-debug-40:\\drawable_money.xml.flat",
+        "source": "C:\\Users\\mathe\\.gradle\\daemon\\8.13\\com.trabalho.elixo.app-main-42:\\drawable\\money.xml"
+    },
+    {
+        "merged": "C:\\Users\\mathe\\.gradle\\daemon\\8.13\\com.trabalho.elixo.app-debug-40:\\mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\mathe\\.gradle\\daemon\\8.13\\com.trabalho.elixo.app-main-42:\\mipmap-xxhdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "com.trabalho.elixo.app-debug-40:/drawable_teclado.png.flat",
+        "source": "com.trabalho.elixo.app-main-42:/drawable/teclado.png"
+    },
+    {
+        "merged": "com.trabalho.elixo.app-debug-40:/drawable_monito.jpg.flat",
+        "source": "com.trabalho.elixo.app-main-42:/drawable/monito.jpg"
+    },
+    {
+        "merged": "com.trabalho.elixo.app-debug-40:/drawable_celular.jpg.flat",
+        "source": "com.trabalho.elixo.app-main-42:/drawable/celular.jpg"
+    },
+    {
+        "merged": "C:\\Users\\mathe\\.gradle\\daemon\\8.13\\com.trabalho.elixo.app-debug-40:\\mipmap-hdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\mathe\\.gradle\\daemon\\8.13\\com.trabalho.elixo.app-main-42:\\mipmap-hdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.trabalho.elixo.app-debug-40:/drawable_roteador.png.flat",
+        "source": "com.trabalho.elixo.app-main-42:/drawable/roteador.png"
+    },
+    {
+        "merged": "C:\\Users\\mathe\\.gradle\\daemon\\8.13\\com.trabalho.elixo.app-debug-40:\\mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\mathe\\.gradle\\daemon\\8.13\\com.trabalho.elixo.app-main-42:\\mipmap-xxhdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\mathe\\.gradle\\daemon\\8.13\\com.trabalho.elixo.app-debug-40:\\xml_backup_rules.xml.flat",
+        "source": "C:\\Users\\mathe\\.gradle\\daemon\\8.13\\com.trabalho.elixo.app-main-42:\\xml\\backup_rules.xml"
+    },
+    {
+        "merged": "C:\\Users\\mathe\\.gradle\\daemon\\8.13\\com.trabalho.elixo.app-debug-40:\\mipmap-anydpi_ic_launcher_round.xml.flat",
+        "source": "C:\\Users\\mathe\\.gradle\\daemon\\8.13\\com.trabalho.elixo.app-main-42:\\mipmap-anydpi\\ic_launcher_round.xml"
+    },
+    {
+        "merged": "C:\\Users\\mathe\\.gradle\\daemon\\8.13\\com.trabalho.elixo.app-debug-40:\\mipmap-xxxhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\mathe\\.gradle\\daemon\\8.13\\com.trabalho.elixo.app-main-42:\\mipmap-xxxhdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\mathe\\.gradle\\daemon\\8.13\\com.trabalho.elixo.app-debug-40:\\mipmap-anydpi_ic_launcher.xml.flat",
+        "source": "C:\\Users\\mathe\\.gradle\\daemon\\8.13\\com.trabalho.elixo.app-main-42:\\mipmap-anydpi\\ic_launcher.xml"
+    },
+    {
+        "merged": "C:\\Users\\mathe\\.gradle\\daemon\\8.13\\com.trabalho.elixo.app-debug-40:\\drawable_a3.png.flat",
+        "source": "C:\\Users\\mathe\\.gradle\\daemon\\8.13\\com.trabalho.elixo.app-main-42:\\drawable\\a3.png"
+    },
+    {
+        "merged": "com.trabalho.elixo.app-debug-40:/drawable_radio.png.flat",
+        "source": "com.trabalho.elixo.app-main-42:/drawable/radio.png"
+    },
+    {
+        "merged": "com.trabalho.elixo.app-debug-40:/drawable_tv.png.flat",
+        "source": "com.trabalho.elixo.app-main-42:/drawable/tv.png"
+    },
+    {
+        "merged": "C:\\Users\\mathe\\.gradle\\daemon\\8.13\\com.trabalho.elixo.app-debug-40:\\drawable_recycle.png.flat",
+        "source": "C:\\Users\\mathe\\.gradle\\daemon\\8.13\\com.trabalho.elixo.app-main-42:\\drawable\\recycle.png"
     }
 ]

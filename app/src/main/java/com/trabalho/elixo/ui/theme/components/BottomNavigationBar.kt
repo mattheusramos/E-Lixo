@@ -20,7 +20,7 @@ fun BottomNavigationBar(
         NavigationBarItem(
             selected = false,
             onClick = {},
-            icon = { Icon(Icons.Default.Star, contentDescription = null) }
+            icon = { Icon(imageVector = Icons.Default.MonetizationOn, contentDescription = null) }
         )
 
         NavigationBarItem(

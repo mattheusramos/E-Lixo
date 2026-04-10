@@ -14,9 +14,10 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import com.trabalho.elixo.ui.theme.GreenPrimary
 import com.trabalho.elixo.R
+import androidx.compose.foundation.clickable
 
 @Composable
-fun LocationCard(location: LocationModel) {
+fun LocationCard(location: LocationModel, onClick: () -> Unit) {
 
     Card(
         shape = RoundedCornerShape(16.dp),
@@ -24,6 +25,7 @@ fun LocationCard(location: LocationModel) {
         modifier = Modifier
             .fillMaxWidth()
             .padding(vertical = 10.dp)
+            .clickable { onClick() }
     ) {
         Row(modifier = Modifier.padding(16.dp)) {
 
@@ -34,8 +36,9 @@ fun LocationCard(location: LocationModel) {
                 contentAlignment = Alignment.Center
             ) {
                 Icon(
-                    painter = painterResource(id = R.drawable.recycle),
-                    contentDescription = "Recycle"
+                    painter = painterResource(id = location.icon),
+                    tint = GreenPrimary,
+                    contentDescription = "Icone do Ponto"
                 )
             }
 

@@ -40,6 +40,7 @@ android {
 }
 
 dependencies {
+    implementation("androidx.compose.material:material-icons-extended:1.7.0")
     implementation(libs.androidx.core.ktx)
     implementation("com.google.android.gms:play-services-location:21.0.1")
     implementation(libs.androidx.lifecycle.runtime.ktx)

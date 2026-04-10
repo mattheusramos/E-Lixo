@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.trabalho.elixo.app-mergeDebugResources-37:/values-fr-rCA/values-fr-rCA.xml",
+            "outputFile": "com.trabalho.elixo.app-mergeDebugResources-38:/values-fr-rCA/values-fr-rCA.xml",
             "map": [
                 {
                     "source": "C:\\Users\\mathe\\.gradle\\caches\\8.13\\transforms\\c9cccedb4f536aed9d4c92a9987e1f89\\transformed\\play-services-base-18.1.0\\res\\values-fr-rCA\\values.xml",

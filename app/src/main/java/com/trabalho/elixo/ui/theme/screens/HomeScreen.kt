@@ -27,12 +27,14 @@ import com.trabalho.elixo.R
 import com.trabalho.elixo.data.locations
 import com.trabalho.elixo.ui.theme.GreenPrimary
 import com.trabalho.elixo.ui.theme.components.*
+import com.trabalho.elixo.data.LocationModel
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun HomeScreen(
     onNavigateToSettings: () -> Unit,
-    onNavigateToReciclagem: () -> Unit
+    onNavigateToReciclagem: () -> Unit,
+    onLocationClick: (LocationModel) -> Unit
 ) {
     val permissionLauncher = rememberLauncherForActivityResult(
         contract = ActivityResultContracts.RequestPermission(),
@@ -114,7 +116,10 @@ fun HomeScreen(
             }
 
             items(updatedLocations) { location ->
-                LocationCard(location)
+                LocationCard(
+                    location = location,
+                    onClick = { onLocationClick(location) }
+                )
             }
 
             item {

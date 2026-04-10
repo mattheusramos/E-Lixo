@@ -10,6 +10,8 @@ import androidx.compose.runtime.*
 import com.trabalho.elixo.ui.theme.screens.HomeScreen
 import com.trabalho.elixo.ui.theme.screens.SettingsScreen
 import com.trabalho.elixo.ui.theme.screens.ReciclagemScreen
+import com.trabalho.elixo.data.LocationModel
+import com.trabalho.elixo.ui.theme.screens.DetailScreen
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -18,6 +20,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             var currentScreen by remember { mutableStateOf("home") }
             var isDarkMode by remember { mutableStateOf(false) }
+            var selectedLocation by remember { mutableStateOf<LocationModel?>(null) }
 
             val colorScheme = if (isDarkMode) {
                 darkColorScheme()
@@ -35,6 +38,10 @@ class MainActivity : ComponentActivity() {
                         },
                         onNavigateToReciclagem = {
                             currentScreen = "reciclagem"
+                        },
+                        onLocationClick = { location ->
+                            selectedLocation = location
+                            currentScreen = "detalhes"
                         }
                     )
 
@@ -51,6 +58,15 @@ class MainActivity : ComponentActivity() {
                             currentScreen = "home"
                         }
                     )
+
+                    "detalhes" -> selectedLocation?.let { location ->
+                        DetailScreen(
+                            location = location,
+                            onBack = {
+                                currentScreen = "home"
+                            }
+                        )
+                    }
                 }
             }
         }
