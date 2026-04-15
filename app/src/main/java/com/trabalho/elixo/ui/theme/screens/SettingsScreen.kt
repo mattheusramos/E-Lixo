@@ -21,6 +21,8 @@ fun SettingsScreen(onBack: () -> Unit,
                    onThemeChange: (Boolean) -> Unit) {
 
     var locationEnabled by remember { mutableStateOf(true) }
+    var showDialogSettings by remember { mutableStateOf(false) }
+    var showDialogFeedback by remember { mutableStateOf(false) }
 
     Scaffold(
         topBar = {
@@ -161,16 +163,49 @@ fun SettingsScreen(onBack: () -> Unit,
 
                     Row {
                         Button(
-                            onClick = {},
+                            onClick = { showDialogSettings = true},
                             colors = ButtonDefaults.buttonColors(containerColor = GreenPrimary)
                         ) {
                             Text("Ver detalhes")
                         }
 
+                       if(showDialogSettings) {
+                           AlertDialog(
+                               onDismissRequest = { showDialogSettings = false },
+                               confirmButton = {
+                                   Button(
+                                       onClick = {
+                                           showDialogSettings = false
+                                       }
+                                   )
+                                   { Text("Entendi") }
+                                               },
+                               title = {
+                                   Text("Não temos Política no momento")
+                               }
+                           )
+                       }
                         Spacer(modifier = Modifier.width(8.dp))
 
-                        OutlinedButton(onClick = {}) {
+                        OutlinedButton(onClick = {showDialogFeedback = true}) {
                             Text("Feedback")
+                        }
+
+                        if(showDialogFeedback) {
+                            AlertDialog(
+                                onDismissRequest = { showDialogFeedback = false },
+                                confirmButton = {
+                                    Button(
+                                        onClick = {
+                                            showDialogFeedback = false
+                                        }
+                                    )
+                                    { Text("Entendi") }
+                                },
+                                title = {
+                                    Text("Não aceitamos Feedback \uD83D\uDC4D")
+                                }
+                            )
                         }
                     }
                 }

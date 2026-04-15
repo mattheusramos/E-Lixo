@@ -13,6 +13,7 @@ drawable a2
 drawable a4
 drawable app_icon
 drawable celular
+drawable exit
 drawable gabinete
 drawable gpu
 drawable ic_launcher_background

@@ -15,6 +15,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import com.trabalho.elixo.R
 import com.trabalho.elixo.ui.theme.GreenPrimary
+import com.trabalho.elixo.utils.MaskUtils
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -25,6 +26,9 @@ fun LoginScreen(
     var usuario by remember { mutableStateOf("") }
     var senha by remember { mutableStateOf("") }
     var senhaVisivel by remember { mutableStateOf(false) }
+    var showDialog by remember { mutableStateOf(false) }
+    var showSuccessDialog by remember { mutableStateOf(false) }
+    var telefone by remember { mutableStateOf("") }
 
     Scaffold(
         containerColor = MaterialTheme.colorScheme.background
@@ -110,10 +114,69 @@ fun LoginScreen(
 
             Spacer(modifier = Modifier.height(12.dp))
 
-            Text(
-                "Esqueceu sua senha?",
-                color = MaterialTheme.colorScheme.primary
-            )
+            TextButton(
+                onClick = { showDialog = true}
+            ) {
+                Text("Esqueceu sua senha?")
+            }
+
+            if (showDialog) {
+                AlertDialog(
+                    onDismissRequest = { showDialog = false },
+                    confirmButton = {
+                        Button(
+                            onClick = {
+                                showDialog = false
+                                showSuccessDialog = true
+                            }
+                        ) {
+                            Text("Confirmar")
+                        }
+                    },
+                    dismissButton = {
+                        OutlinedButton(
+                            onClick = { showDialog = false }
+                        ) {
+                            Text("Cancelar")
+                        }
+                    },
+                    title = {
+                        Text("Recuperar senha")
+                    },
+                    text = {
+                        Column {
+                            Text("Digite seu número de telefone")
+
+                            Spacer(modifier = Modifier.height(12.dp))
+
+                            OutlinedTextField(
+                                value = telefone,
+                                onValueChange = { telefone = MaskUtils.formatarTelefone(it) },
+                                label = { Text("Telefone") },
+                                placeholder = { Text("(00) 00000-0000") },
+                                singleLine = true
+                            )
+                        }
+                    }
+                )
+            }
+
+            if (showSuccessDialog) {
+                AlertDialog(
+                    onDismissRequest = { showSuccessDialog = false },
+                    confirmButton = {
+                        Button(onClick = { showSuccessDialog = false }) {
+                            Text("OK")
+                        }
+                    },
+                    title = {
+                        Text("Sucesso!")
+                    },
+                    text = {
+                        Text("Chegará um SMS com o link para atualizar sua senha.")
+                    }
+                )
+            }
         }
     }
 }

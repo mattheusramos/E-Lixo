@@ -8,8 +8,6 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
@@ -28,6 +26,7 @@ import com.trabalho.elixo.data.locations
 import com.trabalho.elixo.ui.theme.GreenPrimary
 import com.trabalho.elixo.ui.theme.components.*
 import com.trabalho.elixo.data.LocationModel
+import androidx.compose.ui.graphics.Color
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -92,7 +91,12 @@ fun HomeScreen(
                 },
                 actions = {
                     IconButton(onClick = onLogout) {
-                        Icon(Icons.Default.ArrowBack, contentDescription = "Logout")
+                        Icon(
+                            painter = painterResource(id = R.drawable.exit),
+                            contentDescription = "Logout",
+                            modifier = Modifier.size(30.dp),
+                            tint = Color.Unspecified
+                        )
                     }
                 }
             )

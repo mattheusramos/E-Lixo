@@ -44,7 +44,7 @@ fun MonetizacaoScreen(onBack: () -> Unit) {
         )
     }
 
-    val total = itens.sumOf { it.valor }
+    var saldo by remember { mutableStateOf(0.0) }
 
     Scaffold(
         topBar = {
@@ -94,7 +94,7 @@ fun MonetizacaoScreen(onBack: () -> Unit) {
                             )
 
                             Text(
-                                "R$ %.2f".format(total),
+                                "R$ %.2f".format(saldo),
                                 fontWeight = FontWeight.Bold,
                                 style = MaterialTheme.typography.headlineMedium,
                                 color = MaterialTheme.colorScheme.onPrimary
@@ -102,12 +102,9 @@ fun MonetizacaoScreen(onBack: () -> Unit) {
                         }
 
                         Button(
-                            onClick = { showDialog = true },
-                            colors = ButtonDefaults.buttonColors(
-                                containerColor = MaterialTheme.colorScheme.onPrimary
-                            )
+                            onClick = { showDialog = true }
                         ) {
-                            Text("Resgatar", color = GreenPrimary)
+                            Text("Resgatar")
                         }
                     }
                 }
@@ -146,14 +143,10 @@ fun MonetizacaoScreen(onBack: () -> Unit) {
 
                         Column(modifier = Modifier.weight(1f)) {
                             Text(item.nome, fontWeight = FontWeight.Bold)
+                            Text("R$ %.2f".format(item.valor))
                         }
 
-                        Text(
-                            "R$ %.2f".format(item.valor),
-                            color = GreenPrimary,
-                            fontWeight = FontWeight.Bold
-                        )
-                        // botão menos
+                        // BtMenos
                         IconButton(
                             onClick = {
                                 if (item.quantidade > 0) {
@@ -170,7 +163,7 @@ fun MonetizacaoScreen(onBack: () -> Unit) {
 
                         Text("${item.quantidade}")
 
-                        // botão mais
+                        // BtMais
                         IconButton(
                             onClick = {
                                 itens = itens.map {
@@ -193,6 +186,16 @@ fun MonetizacaoScreen(onBack: () -> Unit) {
                         val totalSelecionado = itens.sumOf { it.quantidade }
 
                         if (totalSelecionado > 0) {
+
+                            val valorTotal = itens.sumOf {
+                                it.quantidade * it.valor
+                            }
+
+                            saldo += valorTotal // soma
+
+                            // limpa carrinho
+                            itens = itens.map { it.copy(quantidade = 0) }
+
                             showSuccessDialog = true
                         } else {
                             showErrorDialog = true
@@ -208,57 +211,56 @@ fun MonetizacaoScreen(onBack: () -> Unit) {
                         color = MaterialTheme.colorScheme.onPrimary
                     )
                 }
-                if (showSuccessDialog) {
-                    AlertDialog(
-                        onDismissRequest = { showSuccessDialog = false },
-                        confirmButton = {
-                            Button(onClick = { showSuccessDialog = false }) {
-                                Text("OK")
-                            }
-                        },
-                        title = { Text("Sucesso ✅") },
-                        text = {
-                            Column(horizontalAlignment = Alignment.CenterHorizontally) {
-                                Spacer(modifier = Modifier.height(8.dp))
-                                Text("Coleta solicitada com sucesso!")
-                            }
-                        }
-                    )
-                }
-                if (showErrorDialog) {
-                    AlertDialog(
-                        onDismissRequest = { showErrorDialog = false },
-                        confirmButton = {
-                            Button(onClick = { showErrorDialog = false }) {
-                                Text("OK")
-
-                            }
-                        },
-                        title = { Text("Erro ❌") },
-                        text = {
-                            Text("Selecione pelo menos um item para coleta.")
-                        }
-                    )
-                }
             }
         }
 
+        if (showSuccessDialog) {
+            AlertDialog(
+                onDismissRequest = { showSuccessDialog = false },
+                confirmButton = {
+                    Button(onClick = { showSuccessDialog = false }) {
+                        Text("OK")
+                    }
+                },
+                title = { Text("Sucesso ✅") },
+                text = {
+                    Text("Coleta solicitada com sucesso!")
+                }
+            )
+        }
+
+        if (showErrorDialog) {
+            AlertDialog(
+                onDismissRequest = { showErrorDialog = false },
+                confirmButton = {
+                    Button(onClick = { showErrorDialog = false }) {
+                        Text("OK")
+                    }
+                },
+                title = { Text("Erro ❌") },
+                text = {
+                    Text("Selecione pelo menos um item para coleta.")
+                }
+            )
+        }
+
+        // RESGATE
         if (showDialog) {
             AlertDialog(
                 onDismissRequest = { showDialog = false },
                 confirmButton = {
                     Button(
                         onClick = {
-                            showDialog = false
-                        },
-                        colors = ButtonDefaults.buttonColors(
-                            containerColor = GreenPrimary
-                        )
+                            val valor = valorResgate.toDoubleOrNull() ?: 0.0
+
+                            if (valor > 0 && valor <= saldo) {
+                                saldo -= valor
+                                showDialog = false
+                                valorResgate = ""
+                            }
+                        }
                     ) {
-                        Text(
-                            "Confirmar",
-                            color = MaterialTheme.colorScheme.onPrimary
-                        )
+                        Text("Confirmar")
                     }
                 },
                 dismissButton = {
@@ -273,7 +275,7 @@ fun MonetizacaoScreen(onBack: () -> Unit) {
                 },
                 text = {
                     Column {
-                        Text("Saldo disponível: R$ %.2f".format(total))
+                        Text("Saldo disponível: R$ %.2f".format(saldo))
 
                         Spacer(modifier = Modifier.height(12.dp))
 
