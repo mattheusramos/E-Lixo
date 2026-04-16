@@ -17,6 +17,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.setValue
+import com.trabalho.elixo.ui.theme.White
 
 data class ItemMonetizavel(
     val nome: String,
@@ -89,22 +90,24 @@ fun MonetizacaoScreen(onBack: () -> Unit) {
 
                         Column {
                             Text(
-                                "Saldo estimado",
-                                color = MaterialTheme.colorScheme.onPrimary
+                                "Saldo estimado", color = White
                             )
 
                             Text(
                                 "R$ %.2f".format(saldo),
                                 fontWeight = FontWeight.Bold,
                                 style = MaterialTheme.typography.headlineMedium,
-                                color = MaterialTheme.colorScheme.onPrimary
+                                color = White
                             )
                         }
 
                         Button(
-                            onClick = { showDialog = true }
+                            onClick = { showDialog = true },
+                            colors = ButtonDefaults.buttonColors(
+                                containerColor = White
+                            )
                         ) {
-                            Text("Resgatar")
+                            Text("Resgatar", color = GreenPrimary)
                         }
                     }
                 }
@@ -207,8 +210,7 @@ fun MonetizacaoScreen(onBack: () -> Unit) {
                     )
                 ) {
                     Text(
-                        "Solicitar coleta",
-                        color = MaterialTheme.colorScheme.onPrimary
+                        "Solicitar coleta", color = White
                     )
                 }
             }
@@ -218,8 +220,11 @@ fun MonetizacaoScreen(onBack: () -> Unit) {
             AlertDialog(
                 onDismissRequest = { showSuccessDialog = false },
                 confirmButton = {
-                    Button(onClick = { showSuccessDialog = false }) {
-                        Text("OK")
+                    Button(onClick = { showSuccessDialog = false },
+                            colors = ButtonDefaults.buttonColors(
+                            containerColor = GreenPrimary
+                            )) {
+                        Text("OK", color = White)
                     }
                 },
                 title = { Text("Sucesso ✅") },
@@ -233,8 +238,11 @@ fun MonetizacaoScreen(onBack: () -> Unit) {
             AlertDialog(
                 onDismissRequest = { showErrorDialog = false },
                 confirmButton = {
-                    Button(onClick = { showErrorDialog = false }) {
-                        Text("OK")
+                    Button(onClick = { showErrorDialog = false },
+                            colors = ButtonDefaults.buttonColors(
+                            containerColor = GreenPrimary
+                            )) {
+                        Text("OK", color = White)
                     }
                 },
                 title = { Text("Erro ❌") },
@@ -258,16 +266,19 @@ fun MonetizacaoScreen(onBack: () -> Unit) {
                                 showDialog = false
                                 valorResgate = ""
                             }
-                        }
+                        },
+                        colors = ButtonDefaults.buttonColors(
+                            containerColor = GreenPrimary
+                        )
                     ) {
-                        Text("Confirmar")
+                        Text("Confirmar", color = White)
                     }
                 },
                 dismissButton = {
                     OutlinedButton(
                         onClick = { showDialog = false }
                     ) {
-                        Text("Cancelar")
+                        Text("Cancelar", color = GreenPrimary)
                     }
                 },
                 title = {

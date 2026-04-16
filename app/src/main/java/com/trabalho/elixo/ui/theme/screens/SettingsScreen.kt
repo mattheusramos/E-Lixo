@@ -79,7 +79,14 @@ fun SettingsScreen(onBack: () -> Unit,
 
                     Switch(
                         checked = locationEnabled,
-                        onCheckedChange = { locationEnabled = it }
+                        onCheckedChange = { locationEnabled = it},
+                        colors = SwitchDefaults.colors(
+                            checkedThumbColor = GreenPrimary,
+                            checkedTrackColor = GreenPrimary.copy(alpha = 0.3f),
+
+                            uncheckedThumbColor = MaterialTheme.colorScheme.outline,
+                            uncheckedTrackColor = MaterialTheme.colorScheme.surfaceVariant
+                        )
                     )
                 }
             }
@@ -114,7 +121,7 @@ fun SettingsScreen(onBack: () -> Unit,
                             onClick = { onThemeChange(false) },
                             shape = RoundedCornerShape(50)
                         ) {
-                            Text("Claro")
+                            Text("Claro", color = GreenPrimary)
                         }
 
                         Spacer(modifier = Modifier.width(8.dp))
@@ -123,7 +130,7 @@ fun SettingsScreen(onBack: () -> Unit,
                             onClick = { onThemeChange(true) },
                             shape = RoundedCornerShape(50)
                         ) {
-                            Text("Escuro")
+                            Text("Escuro", color = GreenPrimary)
                         }
                     }
                 }
@@ -166,7 +173,7 @@ fun SettingsScreen(onBack: () -> Unit,
                             onClick = { showDialogSettings = true},
                             colors = ButtonDefaults.buttonColors(containerColor = GreenPrimary)
                         ) {
-                            Text("Ver detalhes")
+                            Text("Ver detalhes", color = White)
                         }
 
                        if(showDialogSettings) {
@@ -176,9 +183,12 @@ fun SettingsScreen(onBack: () -> Unit,
                                    Button(
                                        onClick = {
                                            showDialogSettings = false
-                                       }
+                                       },
+                                       colors = ButtonDefaults.buttonColors(
+                                           containerColor = GreenPrimary
+                                       )
                                    )
-                                   { Text("Entendi") }
+                                   { Text("Entendi", color = White) }
                                                },
                                title = {
                                    Text("Não temos Política no momento")
@@ -188,7 +198,7 @@ fun SettingsScreen(onBack: () -> Unit,
                         Spacer(modifier = Modifier.width(8.dp))
 
                         OutlinedButton(onClick = {showDialogFeedback = true}) {
-                            Text("Feedback")
+                            Text("Feedback", color = GreenPrimary)
                         }
 
                         if(showDialogFeedback) {
@@ -198,9 +208,12 @@ fun SettingsScreen(onBack: () -> Unit,
                                     Button(
                                         onClick = {
                                             showDialogFeedback = false
-                                        }
+                                        },
+                                        colors = ButtonDefaults.buttonColors(
+                                            containerColor = GreenPrimary
+                                        )
                                     )
-                                    { Text("Entendi") }
+                                    { Text("Entendi", color = White) }
                                 },
                                 title = {
                                     Text("Não aceitamos Feedback \uD83D\uDC4D")

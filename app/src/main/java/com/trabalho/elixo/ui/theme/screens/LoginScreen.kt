@@ -15,6 +15,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import com.trabalho.elixo.R
 import com.trabalho.elixo.ui.theme.GreenPrimary
+import com.trabalho.elixo.ui.theme.White
 import com.trabalho.elixo.utils.MaskUtils
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -106,10 +107,7 @@ fun LoginScreen(
                     containerColor = GreenPrimary
                 )
             ) {
-                Text(
-                    "Entrar",
-                    color = MaterialTheme.colorScheme.onPrimary
-                )
+                Text("Entrar", color = White)
             }
 
             Spacer(modifier = Modifier.height(12.dp))
@@ -117,7 +115,7 @@ fun LoginScreen(
             TextButton(
                 onClick = { showDialog = true}
             ) {
-                Text("Esqueceu sua senha?")
+                Text("Esqueceu sua senha?", color = GreenPrimary)
             }
 
             if (showDialog) {
@@ -128,16 +126,17 @@ fun LoginScreen(
                             onClick = {
                                 showDialog = false
                                 showSuccessDialog = true
-                            }
+                            },
+                            colors = ButtonDefaults.buttonColors(containerColor = GreenPrimary)
                         ) {
-                            Text("Confirmar")
+                            Text("Confirmar", color = White)
                         }
                     },
                     dismissButton = {
                         OutlinedButton(
                             onClick = { showDialog = false }
                         ) {
-                            Text("Cancelar")
+                            Text("Cancelar", color = GreenPrimary)
                         }
                     },
                     title = {
@@ -165,8 +164,12 @@ fun LoginScreen(
                 AlertDialog(
                     onDismissRequest = { showSuccessDialog = false },
                     confirmButton = {
-                        Button(onClick = { showSuccessDialog = false }) {
-                            Text("OK")
+                        Button(onClick = { showSuccessDialog = false },
+                                colors = ButtonDefaults.buttonColors(
+                                containerColor = GreenPrimary
+                                )
+                        ) {
+                            Text("OK" , color = White)
                         }
                     },
                     title = {

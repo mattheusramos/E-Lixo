@@ -24,6 +24,7 @@ import androidx.compose.ui.res.painterResource
 import com.trabalho.elixo.R
 import com.trabalho.elixo.data.locations
 import com.trabalho.elixo.ui.theme.GreenPrimary
+import com.trabalho.elixo.ui.theme.White
 import com.trabalho.elixo.ui.theme.components.*
 import com.trabalho.elixo.data.LocationModel
 import androidx.compose.ui.graphics.Color
@@ -151,7 +152,7 @@ fun HomeScreen(
                 ) {
                     Text(
                         "Atualizar localização",
-                        color = MaterialTheme.colorScheme.onSurfaceVariant,
+                        color = White,
                         fontWeight = FontWeight.Bold
                     )
                 }
@@ -162,7 +163,7 @@ fun HomeScreen(
                     onClick = onNavigateToReciclagem,
                     modifier = Modifier.fillMaxWidth()
                 ) {
-                    Text("Aprenda a Reciclar")
+                    Text("Aprenda a Reciclar", color = GreenPrimary)
                 }
             }
         }
